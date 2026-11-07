@@ -2,7 +2,7 @@
 
 # Next.js Agent Template
 
-**Starter Next.js 16 yang dirancang untuk AI coding agent** — entrypoint jelas, aturan berscope, dan *progressive disclosure* supaya model tetap fokus dan hemat token.
+**A Next.js 16 starter designed for AI coding agents** — a clear entrypoint, scoped rules, and *progressive disclosure* so the model stays on track and spends fewer tokens.
 
 [![Status](https://img.shields.io/badge/status-ready%20to%20use-brightgreen?style=flat-square)](#)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=next.js&logoColor=white)](https://nextjs.org)
@@ -10,57 +10,59 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind](https://img.shields.io/badge/Tailwind%20CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
+**English** · [Bahasa Indonesia](README.id.md)
+
 </div>
 
 ---
 
-## Tentang
+## About
 
-Kebanyakan starter Next.js dibuat untuk manusia. Template ini dibuat untuk **dua-duanya**: manusia dan AI agent (Claude Code, Cursor, Copilot, dll).
+Most Next.js starters are written for humans. This one is written for **both** humans and AI agents (Claude Code, Cursor, Copilot, and so on).
 
-Masalahnya, agent harus membaca seluruh repo untuk memahami konvensi — dan sering salah menebak. Template ini memindahkan konvensi ke berkas yang dibaca agent lebih dulu, lalu memecah sisanya jadi skill yang dimuat hanya saat relevan (*progressive disclosure*).
+The problem is that an agent has to read the whole repo to infer conventions — and often guesses wrong. This template moves the conventions into files the agent reads first, then splits the rest into skills that are loaded only when relevant (*progressive disclosure*).
 
-## Yang Ada di Dalam
+## What's Inside
 
-- `AGENTS.md` dan `CLAUDE.md` di root, plus berkas aturan untuk editor lain: `.cursor/rules/agents.mdc`, `.github/copilot-instructions.md`, `.windsurfrules`.
-- **12 skill** di `.agents/skills/`, antara lain `antislop` (6 varian: code, copywriting, human, layoutmobile, ui, dan guardrail umum), `design-taste-frontend`, `security-audit`, `impeccable`, dan `web-design-guidelines`.
-- Library referensi desain di skill `design-taste-frontend`: palet, tipografi, hero, section, motion, dan contoh situs.
-- CI di `.github/workflows/ci.yml`.
-- `.nvmrc` untuk mengunci versi Node.
+- `AGENTS.md` and `CLAUDE.md` at the root, plus rule files for other editors: `.cursor/rules/agents.mdc`, `.github/copilot-instructions.md`, `.windsurfrules`.
+- **12 skills** in `.agents/skills/`, including `antislop` (6 variants: code, copywriting, human, layoutmobile, ui, and a general guardrail), `design-taste-frontend`, `security-audit`, `impeccable`, and `web-design-guidelines`.
+- A design reference library inside `design-taste-frontend`: palettes, typography, heroes, sections, motion, and example sites.
+- CI in `.github/workflows/ci.yml`.
+- `.nvmrc` to pin the Node version.
 
 ## Tech Stack
 
-| Bagian | Teknologi |
+| Layer | Technology |
 | --- | --- |
 | Framework | Next.js 16 (App Router) |
 | UI | React 19 |
-| Bahasa | TypeScript |
+| Language | TypeScript |
 | Styling | Tailwind CSS 4 |
 | Bundler | Turbopack |
 
-## Mulai
+## Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-Buka [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000).
 
-## Struktur
+## Project Layout
 
 ```
-AGENTS.md                          # konvensi utama untuk agent
-CLAUDE.md                          # turunan untuk Claude Code
-.cursor/rules/agents.mdc           # aturan Cursor
-.github/copilot-instructions.md    # aturan GitHub Copilot
-.windsurfrules                     # aturan Windsurf
-.agents/skills/                    # 12 skill, dimuat sesuai kebutuhan
-  ├── antislop/                    # guardrail umum
-  ├── antislop-code/               # pola kode yang harus dihindari
-  ├── antislop-copywriting/        # copy yang tidak robotik
-  ├── antislop-ui/                 # cegah UI generik
-  ├── design-taste-frontend/       # library desain + referensi
+AGENTS.md                          # primary conventions for the agent
+CLAUDE.md                          # derivative for Claude Code
+.cursor/rules/agents.mdc           # Cursor rules
+.github/copilot-instructions.md    # GitHub Copilot rules
+.windsurfrules                     # Windsurf rules
+.agents/skills/                    # 12 skills, loaded on demand
+  ├── antislop/                    # general guardrail
+  ├── antislop-code/               # code patterns to avoid
+  ├── antislop-copywriting/        # copy that does not read like a robot
+  ├── antislop-ui/                 # prevent generic UI
+  ├── design-taste-frontend/       # design library + references
   ├── security-audit/
   └── ...
 app/                               # Next.js App Router
@@ -68,14 +70,14 @@ app/                               # Next.js App Router
 .nvmrc
 ```
 
-## Cocok Untuk
+## Good For
 
-- Memulai project baru dengan AI agent tanpa hasil "template-y".
-- Bereksperimen dengan pola *agent-first* codebase.
-- Belajar struktur aturan agent yang scalable.
+- Starting a new project with an AI agent without the "template look".
+- Experimenting with an *agent-first* codebase layout.
+- Learning a structure for agent rules that scales.
 
 ---
 
 <div align="center">
-Dibuat oleh <a href="https://github.com/Ilhamaji">Ilham Aji</a>
+Built by <a href="https://github.com/Ilhamaji">Ilham Aji</a>
 </div>
